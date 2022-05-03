@@ -1,0 +1,53 @@
+ol {
+    background-color: yellow;
+}
+ol li.par {
+    color: green;
+}
+ol li.impar {
+    text-transform: lowercase;
+}
+h1, h2, h3 {
+    color: red;
+}
+h1 {
+    font-size: 40px;
+    border: 1px solid black;
+}
+li {
+    font-size: 20px;
+}
+li em {
+    font-weight: bold;
+}
+li.listas {
+    color: blue;
+}
+li.java {
+    background-color: pink;
+}
+#stack:hover {
+    font-weight: bold;
+    color: orangered;
+    background-color: orangered;
+}
+#w3:hover {
+    font-weight: bold;
+    color: green;
+    background-color: green;
+}
+#mdn:hover {
+    font-weight: bold;
+    color: black;
+    background-color: black;
+}
+#dev:hover {
+    font-weight: bold;
+    color: yellow;
+    background-color: yellow;
+}
+#trybe:hover {
+    font-weight: bold;
+    color: green;
+    background-color: green;
+}
