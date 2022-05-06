@@ -1,0 +1,3 @@
+let soma;
+soma = 1 + 2;
+console.log(soma);
