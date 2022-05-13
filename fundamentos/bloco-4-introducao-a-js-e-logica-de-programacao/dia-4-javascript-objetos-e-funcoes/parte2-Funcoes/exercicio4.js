@@ -1,7 +1,7 @@
 let maior = 0;
 let nome = null;
 function array(numb) {
-    for (let cont = 0; cont < numb.length; cont = cont + 1) {
+    for (cont in numb) {
         let tamanho = numb[cont].length;
         if (tamanho >= maior) {
             maior = tamanho;
