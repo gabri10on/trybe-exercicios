@@ -1,6 +1,6 @@
 let menor = null;
 function array(numb) {
-    for (let cont = 0; cont < numb.length; cont = cont + 1) {
+    for (cont in numb) {
         if (numb[cont] <= maior) {
             menor = cont;
         }
