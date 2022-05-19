@@ -1,0 +1,63 @@
+<main id="paiDoPai">
+    <section id="pai">
+      <section id="primeiroFilho"></section>
+      <section id="elementoOndeVoceEsta">
+        <section id="primeiroFilhoDoFilho"></section>
+        <section id="segundoEUltimoFilhoDoFilho"></section>
+      </section>
+      Atenção!
+      <section id="terceiroFilho"></section>
+      <section id="quartoEUltimoFilho"></section>
+    </section>
+  </main>
+  <script>
+    document.getElementById("elementoOndeVoceEsta").parentElement.style.color = "red"; //Acesse o elemento elementoOndeVoceEsta + Acesse pai a partir de elementoOndeVoceEsta e adicione uma color a ele
+    document.querySelector("#primeiroFilhoDoFilho").innerText = "Olá, mundo!"; //Acesse o primeiroFilhoDoFilho e adicione um texto a ele
+    document.getElementById("pai").firstElementChild; //Acesse o primeiroFilho a partir de pai
+    document.querySelector("#elementoOndeVoceEsta").previousElementSibling; //Agora acesse o primeiroFilho a partir de elementoOndeVoceEsta
+    document.querySelector("#elementoOndeVoceEsta").nextElementSibling.previousSibling; //Agora acesse o texto Atenção! a partir de elementoOndeVoceEsta
+    document.querySelector("#elementoOndeVoceEsta").nextElementSibling //Agora acesse o terceiroFilho a partir de elementoOndeVoceEsta
+    document.querySelector("#pai").lastElementChild.previousElementSibling //Agora acesse o terceiroFilho a partir de pai
+
+    //Crie um irmão para elementoOndeVoceEsta
+    let elementoPai = document.querySelector("#pai");
+    let irmaoelementoOndeVoceEsta = document.createElement("section");
+    irmaoelementoOndeVoceEsta.innerText = "Oi, sou seu irmão";
+    elementoPai.appendChild(irmaoelementoOndeVoceEsta);
+    irmaoelementoOndeVoceEsta.className = "delete"
+
+
+    //Crie um filho para elementoOndeVoceEsta
+    let ondeVoceEsta = document.querySelector("#elementoOndeVoceEsta");
+    let filhoelementoOndeVoceEsta = document.createElement("section");
+    filhoelementoOndeVoceEsta.innerText = "Oi, sou seu filho";
+    ondeVoceEsta.appendChild(filhoelementoOndeVoceEsta);
+    filhoelementoOndeVoceEsta.className = "delete2"
+
+
+
+    //Crie um filho para primeiroFilhoDoFilho
+    let filhoDoFilho = document.querySelector("#primeiroFilhoDoFilho")
+    let filhoDofilhoDofilho = document.createElement("section");
+    filhoDofilhoDofilho.innerText = "filhoDoFilhodoFilho"
+    filhoDoFilho.appendChild(filhoDofilhoDofilho)
+
+    //A partir desse filho criado, acesse terceiroFilho
+    document.querySelectorAll("#primeiroFilhoDoFilho section")[0].parentElement.parentElement.nextElementSibling
+
+
+    //Remova todos os elementos filhos de paiDoPai exceto pai, elementoOndeVoceEsta e primeiroFilhoDoFilho
+    let pai = document.querySelector("#pai");
+    pai.removeChild(document.querySelector("#primeiroFilho"));
+    pai.removeChild(document.querySelector("#terceiroFilho"));
+    pai.removeChild(document.querySelector("#quartoEUltimoFilho"));
+    pai.removeChild(document.querySelector(".delete"));
+    pai.removeChild(document.querySelector("#elementoOndeVoceEsta").nextSibling);
+    
+    
+    let OndeVoceEsta = document.getElementById("elementoOndeVoceEsta");
+    ondeVoceEsta.removeChild(document.querySelector("#segundoEUltimoFilhoDoFilho"));
+    ondeVoceEsta.removeChild(document.querySelector(".delete2"));
+    
+
+  </script>
