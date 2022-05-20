@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let body = document.querySelector("body");
+
+      let title = document.createElement("h1");
+      title.className = "title"
+      title.innerText = "Exercício 5.2 - JavaScript DOM";
+      body.appendChild(title);
+
+      let main = document.createElement("main");
+      main.className = "main-content";
+      body.appendChild(main)
+
+      let mainFather = document.querySelector("main");
+
+      let section1 = document.createElement("section");
+      section1.className = "center-content";
+      mainFather.appendChild(section1);
+
+      let sectionFather = document.querySelector("section");
+
+      let paragraph = document.createElement("p");
+      paragraph.innerText = "Escreva algum texto";
+      sectionFather.appendChild(paragraph);
+      
+      let section2 = document.createElement("section")
+      section2.className = "left-content";
+      mainFather.appendChild(section2);
+      
+      let section3 = document.createElement("section")
+      section3.className = "right-content";
+      mainFather.appendChild(section3);
+
+      let section2Father = document.querySelectorAll("section")[1];
+
+      let img = document.createElement("img");
+      img.className = "small-image";
+      img.src = ("https://picsum.photos/200");
+      section2Father.appendChild(img);
+
+      let section3Father = document.querySelectorAll("section")[2];
+
+      let ul = document.createElement("ul");
+      section3Father.appendChild(ul);
+
+      let ulFather = document.querySelector("ul")
+
+      let list = ["um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez"];
+      for (index = 0 ; index < list.length ; index += 1) {
+          let item = list[index];
+
+          let listItem = document.createElement("li");
+          listItem.innerText = item;
+
+          ulFather.appendChild(listItem);
+        }
+     
+      let h31 = document.createElement("h3")
+      h31.className = "description"
+      mainFather.appendChild(h31);
+
+      let h32 = document.createElement("h3")
+      h32.className = "description"
+      mainFather.appendChild(h32);
+      
+      let h33 = document.createElement("h3")
+      h33.className = "description"
+      mainFather.appendChild(h33);
+
+      mainFather.removeChild(document.querySelector(".left-content"))
+
+      const a = document.getElementsByClassName("right-content")[0];
+      a.style.marginRight = "auto"
+
+      const b = document.getElementsByClassName("center-content")[0].parentElement
+      //b.style.backgroundColor = "green"
+    </script>
+  </body>
+</html>
