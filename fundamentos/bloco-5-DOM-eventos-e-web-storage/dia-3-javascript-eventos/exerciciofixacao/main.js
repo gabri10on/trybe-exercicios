@@ -26,8 +26,6 @@ function liClick(event) {
 
 // 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
 // com a classe 'tech';
-
-
 input.addEventListener("input", changeTech);
 
 function changeTech(event) {
