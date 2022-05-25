@@ -110,3 +110,5 @@ function mudançaDeTexto(event) {
         document.querySelectorAll(".friday")[3].innerText = "25"
     }
 }
+
+//Ex6
