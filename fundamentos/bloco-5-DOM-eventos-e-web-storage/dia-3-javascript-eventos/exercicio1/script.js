@@ -25,7 +25,7 @@ function createDaysOfTheMonth() {
         
         let daysUnityLi = document.createElement("li");
         daysUnityLi.innerText = daysUnity;
-        daysUnityLi.className = "day"
+        daysUnityLi.className = "day";
         
 
         daysContainer.appendChild(daysUnityLi);
@@ -100,15 +100,79 @@ function mudançaDeTexto(event) {
     if (friday1[0].innerText === "4"){
         for (index = 0; index < friday1.length; index += 1) {
             const friday2 = friday1[index]
-            friday2.innerText = "Sexta-feira";
+            friday2.innerText = "SEXTOU!";
         } 
     }
     else {
-        document.querySelectorAll(".friday")[0].innerText = "4"
-        document.querySelectorAll(".friday")[1].innerText = "11"
-        document.querySelectorAll(".friday")[2].innerText = "18"
-        document.querySelectorAll(".friday")[3].innerText = "25"
+        document.querySelectorAll(".friday")[0].innerText = "4";
+        document.querySelectorAll(".friday")[1].innerText = "11";
+        document.querySelectorAll(".friday")[2].innerText = "18";
+        document.querySelectorAll(".friday")[3].innerText = "25";
     }
 }
 
 //Ex6
+const dayNumber = document.querySelectorAll(".day");
+for (index = 0; index < dayNumber.length; index += 1) {
+    const dayLi = dayNumber[index];
+    dayLi.addEventListener("mouseover", zoomOn);
+    dayLi.addEventListener("mouseleave", zoomOf);
+}
+
+function zoomOn(event) {
+    event.target.style.fontSize = "25px"
+}
+
+function zoomOf(mudarFonte2) {
+    event.target.style.fontSize = "20px"
+}
+
+//Ex7
+function addTarefa(tarefa) {
+    const adcionarTarefa = document.createElement("span");
+    const spanContainer = document.getElementsByClassName("my-tasks")[0];
+    spanContainer.appendChild(adcionarTarefa);
+    adcionarTarefa.innerText = tarefa;
+}
+addTarefa("Projeto")
+
+//Ex8
+function addCor(cor) {
+    const adicionarCor = document.createElement("div");
+    const corContainer = document.getElementsByClassName("my-tasks")[0];
+    corContainer.appendChild(adicionarCor);
+    adicionarCor.style.backgroundColor = cor;
+    adicionarCor.className = "task";
+}
+addCor("blue")
+
+//Ex9
+const clickDiv = document.querySelectorAll(".my-tasks div")[0];
+
+clickDiv.addEventListener("click", divEvent);
+
+function divEvent(event) {
+    if (clickDiv.className !== ("task task-selected")) {
+        event.target.className = ("task task-selected")
+    }
+    else (
+        event.target.className = ("task")
+    )
+}
+
+//Ex10
+const dayLength = document.querySelectorAll(".day")
+for (index = 0; index < dayLength.length; index += 1) {
+    const dayListClick = dayLength[index]
+    dayListClick.addEventListener("click", dayClick)
+}
+
+function dayClick(event) {
+    const backgroundColor = document.querySelectorAll(".my-tasks div")[0].style.backgroundColor;
+    if (event.target.style.color !== backgroundColor) {
+        event.target.style.color = backgroundColor
+    }
+    else {
+        event.target.style.color = "rgb(119,119,119)"
+    }
+}
