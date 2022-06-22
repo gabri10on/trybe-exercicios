@@ -4,42 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Exercício WebStorage</title>
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
     </head>
 <body>
     <h1>Formulário TrybeTrip</h1>
-    <form action="" method="get">
-        <label for="input-name">Digite seu nome:</label>
-        <input type="text" placeholder="Digite seu nome" required name="nome" id="input-name">
-        <br><br>
-        <label for="input-email">Digite seu e-mail:</label>
-        <input type="email" placeholder="Digite seu e-mail" required name="email" id="input-email">
-        <br><br>
-        <label for="destinos">Destino Preferido:</label>
-        <br>
-        <label><input type="radio" name="destino" class="destinos">Cidade</label>
-        <label><input type="radio" name="destino" class="destinos">Campo</label>
-        <label><input type="radio" name="destino" class="destinos">Praia</label>
-        <label><input type="radio" name="destino" class="destinos">Montanha</label>
-        <br><br>
+    <form action="" method="get" class="row mx-5">
+        <div class="col-12 mb-3">
+            <label for="input-name">Digite seu nome:</label>
+            <input type="text" placeholder="Digite seu nome" required name="nome" id="input-name" class="form-control">
+        </div>
+        <div class="col-12 mb-3">
+            <label for="input-email">Digite seu e-mail:</label>
+            <input type="email" placeholder="Digite seu e-mail" required name="email" id="input-email" class="form-control">
+        </div>
+        <div class="col-12 mb-3">
+            <label for="destinos">Destino Preferido:</label>
+            <label><input type="radio" name="destino" class="destinos">Cidade</label>
+            <label><input type="radio" name="destino" class="destinos">Campo</label>
+            <label><input type="radio" name="destino" class="destinos">Praia</label>
+            <label><input type="radio" name="destino" class="destinos">Montanha</label>
+        </div>
         <label for="text-trybetrip">Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</label>
-        <br>
-        <textarea name="texto" id="text-trybetrip" cols="30" rows="10"></textarea>
-        <br><br>
-        <label for="data">Data:</label>
-        <input type="date" id="data">
-        <br><br>
-        <input type="checkbox" name="checkboxGostaria" id="gostaria">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?
-        <br>
-        <input type="checkbox" name="checkboxConcordo" id="concordo">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.
-        <br><br>
-        <label for="loggin">Loggin:</label>
-        <input type="text" id="loggin" name="loggin" required>
-        <label for="loggin">Senha:</label>
-        <input type="password" id="pass" name="senha" required>
-        <br><br><br>
-        <button type="submit" id="buttonSubmit">Enviar</button>
+        <div class="col-12 mb-4">
+            <textarea name="texto" id="text-trybetrip" class="form-control"></textarea>
+        </div>
+        <div class="col-12 mb-3">
+            <label for="data">Data:</label>
+            <input type="date" id="data">
+        </div>
+        <div class="col-12 mb-1">
+            <input type="checkbox" name="checkboxGostaria" id="gostaria">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?
+        </div>
+        <div class="col-12 mb-4">
+            <input type="checkbox" name="checkboxConcordo" id="concordo">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.
+        </div>
+        <div class="mb-3">
+            <label for="loggin">Loggin:</label>
+            <input type="text" id="loggin" name="loggin" required>
+            <label for="loggin">Senha:</label>
+            <input type="password" id="pass" name="senha" required>
+        </div>
+        <div class="col-12 mb-3">
+            <button type="submit" id="buttonSubmit" class="btn btn-primary">Enviar</button>
+        </div>
     </form>
     <script src="script.js"></script>
 </body>
