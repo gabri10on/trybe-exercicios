@@ -13,19 +13,21 @@
 
 //ex1
 
-const ifScope = 'Não devo ser utilizada fora do meu escopo (if)';
-const escopo = true;
-const testingScope = (escopo) => (escopo === true) ? 'ótimo, fui utilizada no escopo !' : 'Não devo ser utilizada fora meu escopo (else)';
-console.log(`${ifScope}, ${testingScope(true)}`)
+const testingScope = ((escopo) => { 
+  let ifScope = escopo === true ? 'Não devo ser utilizada fora do meu escopo (if)' : 'Não devo ser utilizada fora meu escopo (else)';
+  ifScope = escopo === true ? ifScope + ' ótimo, fui utilizada no escopo !' : ifScope
+  return ifScope
+})
+console.log(`${testingScope(true)}`);
 
 //ex2
 
 const oddsAndEvens = [13, 3, 4, 10, 7, 2];
 
-function compararNumeros(a, b) {
+const compararNumeros = (a, b) => {
   return a - b;
 }
 
 oddsAndEvens.sort(compararNumeros)
 
-console.log(`Os números ${oddsAndEvens} se encontram ordenados de forma crescente!`); // será necessário alterar essa linha 😉
+console.log(`Os números ${oddsAndEvens} se encontram ordenados de forma crescente!`);
