@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Calculadora</title>
+</head>
+<body>
+  <p>Informe dois números para realizar a soma:</p>
+  <label for='value1'>Valor 1:</label>
+  <input type='text' id='value1'>
+  <label for='value2'>Valor 2:</label>
+  <input type='text' id='value2'>
+  <button id='button'>Somar</button>
+  <p id='result'></p>
+  <script>
+    const verifyIsNull = (text1, text2) => {
+      if (text1 === '' || text2 === '') {
+        const result = 'Erro nos valores, insira um valor nos 2 campos.';
+        document.getElementById('result').innerHTML = `Resultado: ${result}`;
+        throw new Error('Entre com um valor, campo em branco!')
+      }
+    };
+
+    const verifyIsNumber = (numb1, numb2) => {
+      if (isNaN(numb1) || isNaN(numb2)) {
+        const result = 'Erro nos valores, tente novamente com um número.';
+        document.getElementById('result').innerHTML = `Resultado: ${result}`;
+        throw new Error('O campo digitado não é um número!')
+      }
+    };
+
+    function sum() {
+      const value1 = document.getElementById('value1').value;
+      const value2 = document.getElementById('value2').value;
+      try {
+        try {
+          verifyIsNull(value1, value2);
+          verifyIsNumber(value1, value2)
+          const result = parseInt(value1) + parseInt(value2);
+          document.getElementById('result').innerHTML = `Resultado: ${result}`;
+        } finally {
+          document.getElementById('value1').value = '';
+          document.getElementById('value2').value = '';
+          }
+      } catch (error) {
+        alert(error.message)
+      }
+    }
+
+    window.onload = () => {
+      const button = document.getElementById('button');
+      button.addEventListener('click', sum);
+    }
+  </script>
+</body>
+</html>
